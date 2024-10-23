@@ -1,7 +1,10 @@
 # PROJECT TITLE: DATA ANALYSIS AND VISUALIZATION USING EXCEL, SQL SERVER, AND POWER BI
 
 
-##Project Overview
+## PROJECT OVERVIEW
+
+## DATA SOURCES
+LITA Capstone Project
 
 ## TABLE OF CONTENT
 * Data Cleaning and Preprocessing (Excel)

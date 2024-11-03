@@ -21,6 +21,19 @@ Currently, LITA Capstone Sales and Customer data is fragmented, making it diffic
 
 Design and deploy sales and customer data integration and analytics solution to provide actionable insights, enabling informed decision making and driving business growth.
 
+### Objectives
+
+The primary objective of this analysis are:
+   - Use pivot tables to summarize total sales by product, region, and month.
+   - Identify products with no sales.
+   - Calculate monthly sales for the cirrent year.
+   - Identify the top performing product.
+   - Calculate the aberage subscription duration.
+   - Identify the most popular subscription types.
+
+
+## Data Description
+
 ### Data Sources
 
 The primary source of data used in this analysis is the LITA Capstone Sales data, and the LITA Capstone Customer data. Provided in an Excel file format, covering sales transaction from January 2023 to August 2024 and customers subscriptions from January 2022 to January 2024.
@@ -85,3 +98,11 @@ The customer dataset includes the following categories:
    - Checked datatype: Checked the column headers for inconsistent or wrong datatype
    - Created measure: Created measure for the order date in the sales data to know the average sales year Average Sales Year -    *AVERAGE(SalesData[OrderDate].[Year])*
 
+# Exploratory Data Analysis (EDA)
+After cleaning the data in Excel, it was exported to SQL for analysis, then it was exported to Power BI for dashboard creation. In Excel, the following steps were carried out:
+
+Descriptive Statistics: Calculated basic statistics and analyzed distributions.
+
+Visualization: Created charts and graphs to visualize trends and patterns.
+
+Dashboard Creation: Developed interactive dashboards to present key findings effectively.

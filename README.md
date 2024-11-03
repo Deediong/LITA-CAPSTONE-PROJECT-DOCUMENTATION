@@ -1,6 +1,8 @@
 # PROJECT TITLE: SALES DATA ANALYSIS AND VISUALIZATION USING EXCEL, SQL SERVER, AND POWER BI
 
+
 ## TABLE OF CONTENTS
+
 * Data Cleaning and Preprocessing (Excel)
 * Database Creation and Querying (SQL Server)
 * Data Visualization and Insights (Power BI) 
@@ -11,23 +13,28 @@ The Sales Data Analysis and Visualization project aims to uncover valuable insig
 Imagine having a really clear view of your sales landscape, kmowing exactly which products are flying off the shelves, which customers are loyal patrons, and where your next big sales opportunity lies.
 Our quest is to dig dip into the sales data of LITA Capstone, uncovering trends, patterns, and insights that drive business growth. This project presents the results of the LITA Capstone sales analysis to understand the underlying issues and to propose actionable recommendations.
 
-### Problem Statement:
+### Problem Statement
+
 Currently, LITA Capstone Sales data is fragmented, making it difficult to understand product category performance, regional sales trends, and high value customer behavior. decisions?
 How then can we integrate and analyze LITA Capstone Sales data to inform business?
 
-### Solution Statement:
+### Solution Statement
+
 Design and deploy sales data integration and analytics solution to provide actionable insights, enabling informed decision making and driving business growth.
 
-### DATA SOURCES
+### Data Sources
+
 The primary source of data used in this analysis is the LITA Capstone Sales data, provided in an Excel file format, covering sales transaction from January 2023 to August 2024
 
-### Tools Used:
+### Tools Used
+
    - For Data Manipulation - Microsoft Excel download link here
    - For Data Storage - CSV file format download link here
    - For Data Analysis - SQL download server here and SSMS
    - For Data Visualization - Power BI
 
-### Data Characteristics:
+### Data Characteristics
+
 The dataset includes the following categories:
    - Order ID: Unique identifier for each order made.
    - Customer ID: Unique identifier for each customer.
@@ -38,7 +45,8 @@ The dataset includes the following categories:
    - Unit Price: The amount for each product quantity.
    - Total Sales: The total amount for each quantity sold.
 
-### Basic Statistics about the dataset:
+### Basic Statistics about the dataset
+
    - Number of unique customers: 9,923
    - Number of product category: 6
    - Number of Regions involved: 4

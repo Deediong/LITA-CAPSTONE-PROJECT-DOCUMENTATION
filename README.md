@@ -3,15 +3,21 @@
 
 ## TABLE OF CONTENTS
 
-* Data Cleaning and Preprocessing (Excel)
-* Database Creation and Querying (SQL Server)
-* Data Visualization and Insights (Power BI) 
+1. Project Overview [Project Overview](projectoverview)
+2. Statements [Statements](statements)
+3. Data Description [Data Description](datadescription)
+4. Data Cleaning and Preparation [Data Cleaning and Preparation](datacleaningandpreparation)
+5. Exploratory Data Analysis (EDA) [Exploratory Data Analysis (EDA) ](exploratorydataanalysis(eda))
+6. Data Analysis [Data Analysis](dataanalysis)
+
 
 ## PROJECT OVERVIEW
 
 The Sales and Customer Data Analysis and Visualization project aims to uncover valuable insights from LITA Capstone sales and customer data to inform business decisions, optimize sales strategies, and enhance customer engagement.
 Imagine having a really clear view of your sales landscape, knowing exactly which products are flying off the shelves, which customers are loyal patrons, and where your next big sales opportunity lies.
 Our quest is to dig dip into the sales and customer data of LITA Capstone, uncovering trends, patterns, and insights that drive business growth. This project presents the results of the LITA Capstone sales and customer analysis to understand the underlying issues and to propose actionable recommendations.
+
+## Statements:
 
 ### Problem Statement
 
@@ -24,11 +30,11 @@ Design and deploy sales and customer data integration and analytics solution to 
 ### Objectives
 
 The primary objective of this analysis are:
-   - Use pivot tables to summarize total sales by product, region, and month.
+   - Summarize total sales by product, region, and month using pivot tables.
    - Identify products with no sales.
-   - Calculate monthly sales for the cirrent year.
+   - Calculate monthly sales for the current year.
    - Identify the top performing product.
-   - Calculate the aberage subscription duration.
+   - Calculate the average subscription duration.
    - Identify the most popular subscription types.
 
 
@@ -40,10 +46,9 @@ The primary source of data used in this analysis is the LITA Capstone Sales data
 
 ### Tools Used
 
-   - For Data Manipulation - Microsoft Excel download link here
-   - For Data Storage - CSV file format download link here
-   - For Data Analysis - SQL download server here and SSMS
-   - For Data Visualization - Power BI
+   - For Data Cleaning, Analysis, and Visualization - Microsoft Excel [Download Here](https://www.microsoft.com)
+   - For Data Querying and Manipulation - SQL download server [Download Here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads?) and SSMS [Here](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?)              
+   - For Data Visualization - Power BI [Download Here](https://apps.microsoft.com/detail/9ntxr16hnw1t?)
 
 ### Data Characteristics
 
@@ -56,6 +61,8 @@ The sales dataset includes the following categories:
    - Quantity: The number of units of the products purchased in each transaction.
    - Unit Price: The amount for each product quantity.
    - Total Sales: The total amount for each quantity sold.
+   - Average Sales: The total average sales.
+   - Transaction Category:The category of quantity sold (Low, Medium, High).
 
 The customer dataset includes the following categories:
    - Customer ID: Unique identifier for each customer.
@@ -74,6 +81,9 @@ The customer dataset includes the following categories:
    - Number of Regions involved: 4
    - Total quantity sold: 68,464 items
    - Total sales made: #2,101,180
+   - Average sales: 211.78207
+   - Transaction category: 3
+
 
 ### Basic Statistics about the customer dataset
 
@@ -84,25 +94,107 @@ The customer dataset includes the following categories:
    - Canceled: True/False
    - Total revenue: #67,542,806
 
-
-
+   
 ##  Data Cleaning and Preparation
 
    - Checked for blank or missing values: Reviewed the dataset for any blank or missing entries.
    - Removed duplicates: Eliminated duplicate rows/entries to ensure data uniqueness.
    - Data validation: Verified data consistency and accuracy.
    - Data formatting: Ensured consistent formatting throughout the dataset.
-   - Created new column: Added a new column to calculate total sales
-   - Calculated total sales colunm: Performed calculations to derive total sales from provided columns ( Quantity and Price =F2*G2)
+   - Created new column:
+        1. Total sales
+        2. Average sales
+        3. Transaction category
+   - Calculations:
+        1. Performed calculations to derive total sales from provided columns (Quantity and Price):
+           
+                 =SUM(F:F*G:G)
+        3. Calculation to derive the average sales for each product by total sales:
+           
+                        =Averageif(C:C,C:C,H:H)
+        5. Calculation to derive the transaction category:
+           
+                        =IF(F2<=3,"LOW",IF(F2<=6,"MEDIUM","HIGH"))
+                          =IF(F3<=3,"LOW",IF(F3<=6,"MEDIUM","HIGH"))
+                          =IF(F4<=3,"LOW",IF(F4<=6,"MEDIUM","HIGH"))
+                          =IF(F5<=3,"LOW",IF(F5<=6,"MEDIUM","HIGH"))
    - Removed null columns: Removed the null columns after importing the sales and customer data to power BI in the transformation phase.
    - Checked datatype: Checked the column headers for inconsistent or wrong datatype
-   - Created measure: Created measure for the order date in the sales data to know the average sales year Average Sales Year -    *AVERAGE(SalesData[OrderDate].[Year])*
+   - Created measure: Created measure for the order date in the sales data to know the average sales year Average Sales Year -
+     
+                    AVERAGE(SalesData[OrderDate].[Year])
 
-# Exploratory Data Analysis (EDA)
-After cleaning the data in Excel, it was exported to SQL for analysis, then it was exported to Power BI for dashboard creation. In Excel, the following steps were carried out:
+## Exploratory Data Analysis (EDA)
 
-Descriptive Statistics: Calculated basic statistics and analyzed distributions.
+Sales Data
+1. Retrieve the total sales for each product category.
+2. Find the number of sales transactions in each region.
+3. Find the highest-selling product by total sales value.
+4. Calculate total revenue per product.
+5. Calculate monthly sales totals for the current year.
+6. Find the top 5 customers by total purchase amount.
+7. Calculate the percentage of total sales contributed by each region.
+8. Identify products with no sales in the last quarter.
 
-Visualization: Created charts and graphs to visualize trends and patterns.
+Customer Data
+1. Retrieve the total number of customers from each region.
+2. Find the most popular subscription type by the number of customers.
+3. Find customers who canceled their subscription within 6 months.
+4. Calculate the average subscription duration for all customers.
+5. Find customers with subscriptions longer than 12 months.
+6. Calculate total revenue by subscription type.
+7. Find the top 3 regions by subscription cancellations.
+8. Find the total number of active and canceled subscriptions.
 
-Dashboard Creation: Developed interactive dashboards to present key findings effectively.
+
+## Data Analysis
+These are some of the codes used:
+
+``` SQL
+SELECT * FROM [dbo].[LITA CAPSTONE SALES DATA]
+
+SELECT Product, SUM(Quantity * Unitprice) AS [Total Sales]
+FROM [dbo].[LITA CAPSTONE SALES DATA]
+GROUP BY Product;
+
+SELECT Product, SUM(Quantity * Unitprice) AS [Total Sales]
+FROM [dbo].[LITA CAPSTONE SALES DATA]
+GROUP BY Product
+ORDER BY [Total Sales] DESC;
+
+SELECT TOP 5 CUSTOMER_ID,
+SUM(QUANTITY * UNITPRICE) AS [TOTAL PURCHASE AMOUNT]
+FROM [dbo].[LITA CAPSTONE SALES DATA]
+GROUP BY CUSTOMER_ID
+ORDER BY [TOTAL PURCHASE AMOUNT] DESC;
+
+SELECT * FROM [dbo].[LITA CAPSTONE CUSTOMER DATA]
+
+SELECT AVG(DATEDIFF (Day, SubscriptionStart, SubscriptionEnd)) AS [Average Duration]
+FROM [dbo].[LITA CAPSTONE CUSTOMER DATA];
+
+SELECT TOP 3 Region,Canceled
+FROM [dbo].[LITA CAPSTONE CUSTOMER DATA]
+
+SELECT Canceled, COUNT(CustomerID) AS [Subscriptions]
+FROM [dbo].[LITA CAPSTONE CUSTOMER DATA]
+GROUP BY Canceled;
+
+SELECT SubscriptionType, SUM(Revenue) AS [Total Revenue]
+FROM [dbo].[LITA CAPSTONE CUSTOMER DATA]
+GROUP BY SubscriptionType;
+
+```
+
+``` Power BI
+Average Sales Year= AVERAGE(SalesData[OrderDate].[Year])
+```
+
+
+
+
+
+
+
+
+

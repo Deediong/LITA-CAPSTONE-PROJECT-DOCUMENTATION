@@ -3,11 +3,11 @@
 
 ## TABLE OF CONTENTS
 
-1. *[Project Overview](#projectoverview)*
-2. *[Data Description](#datadescription)*
-3. *[Data Cleaning and Preparation](#datacleaningandpreparation)*
-4. *[Exploratory Data Analysis (EDA) ](#exploratorydataanalysis(eda))*
-5. *[Data Analysis](#dataanalysis)*
+1. *[Project Overview](#project-overview)*
+2. *[Data Description](#data-description)*
+3. *[Data Cleaning and Preparation](#data-cleaning-and-preparation)*
+4. *[Exploratory Data Analysis](#exploratory-data-analysis)*
+5. *[Data Analysis](#data-analysis)*
 
 
 ## Project Overview
@@ -126,7 +126,7 @@ The customer dataset includes the following categories:
      
                     AVERAGE(SalesData[OrderDate].[Year])
 
-## Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis
 ---
 
 Sales Data

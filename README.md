@@ -3,21 +3,21 @@
 
 ## TABLE OF CONTENTS
 
-1. Project Overview [Project Overview](projectoverview)
-2. Statements [Statements](statements)
-3. Data Description [Data Description](datadescription)
-4. Data Cleaning and Preparation [Data Cleaning and Preparation](datacleaningandpreparation)
-5. Exploratory Data Analysis (EDA) [Exploratory Data Analysis (EDA) ](exploratorydataanalysis(eda))
-6. Data Analysis [Data Analysis](dataanalysis)
+1. *[Project Overview](#projectoverview)*
+2. *[Data Description](#datadescription)*
+3. *[Data Cleaning and Preparation](#datacleaningandpreparation)*
+4. *[Exploratory Data Analysis (EDA) ](#exploratorydataanalysis(eda))*
+5. *[Data Analysis](#dataanalysis)*
 
 
-## PROJECT OVERVIEW
+## Project Overview
+---
 
 The Sales and Customer Data Analysis and Visualization project aims to uncover valuable insights from LITA Capstone sales and customer data to inform business decisions, optimize sales strategies, and enhance customer engagement.
 Imagine having a really clear view of your sales landscape, knowing exactly which products are flying off the shelves, which customers are loyal patrons, and where your next big sales opportunity lies.
 Our quest is to dig dip into the sales and customer data of LITA Capstone, uncovering trends, patterns, and insights that drive business growth. This project presents the results of the LITA Capstone sales and customer analysis to understand the underlying issues and to propose actionable recommendations.
 
-## Statements:
+## Statements
 
 ### Problem Statement
 
@@ -39,6 +39,7 @@ The primary objective of this analysis are:
 
 
 ## Data Description
+---
 
 ### Data Sources
 
@@ -96,6 +97,7 @@ The customer dataset includes the following categories:
 
    
 ##  Data Cleaning and Preparation
+---
 
    - Checked for blank or missing values: Reviewed the dataset for any blank or missing entries.
    - Removed duplicates: Eliminated duplicate rows/entries to ensure data uniqueness.
@@ -125,6 +127,7 @@ The customer dataset includes the following categories:
                     AVERAGE(SalesData[OrderDate].[Year])
 
 ## Exploratory Data Analysis (EDA)
+---
 
 Sales Data
 1. Retrieve the total sales for each product category.
@@ -148,6 +151,8 @@ Customer Data
 
 
 ## Data Analysis
+---
+
 These are some of the codes used:
 
 ``` SQL

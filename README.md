@@ -133,23 +133,74 @@ The customer dataset includes the following categories:
 
 Sales Data
 1. Retrieve the total sales for each product category.
+
+   ![Screenshot 1](https://github.com/user-attachments/assets/444d54da-879d-4f59-bcda-7fa6a5db7f5d)
 2. Find the number of sales transactions in each region.
+   
+``` SQL
+SELECT Region, SUM(Quantity*Unitprice) AS [Total Sales]
+from [dbo].[LITA CAPSTONE SALES DATA]
+GROUP BY Region;
+```
+
 3. Find the highest-selling product by total sales value.
+
+   ![Screenshot 3](https://github.com/user-attachments/assets/9dc92d80-3e6c-4584-898f-9c7ff65f581a)
 4. Calculate total revenue per product.
+``` SQL
+
+SELECT Product, SUM(Quantity * Unitprice) AS [Total Revenue]
+FROM [dbo].[LITA CAPSTONE SALES DATA]
+GROUP BY Product
+```
+
 5. Calculate monthly sales totals for the current year.
+
+   ![Screenshot 2024-11-05 044440](https://github.com/user-attachments/assets/b08ff4aa-1c56-437c-b375-9c117a1f75d4)
 6. Find the top 5 customers by total purchase amount.
+   
+``` SQL
+SELECT TOP 5 CUSTOMER_ID,
+SUM(QUANTITY * UNITPRICE) AS [TOTAL PURCHASE AMOUNT]
+FROM [dbo].[LITA CAPSTONE SALES DATA]
+GROUP BY CUSTOMER_ID
+ORDER BY [TOTAL PURCHASE AMOUNT] DESC;
+```
+
 7. Calculate the percentage of total sales contributed by each region.
+
+   ![Screenshot 2](https://github.com/user-attachments/assets/b0073faf-897f-4ff2-b623-6bd9ba8306fd)
 8. Identify products with no sales in the last quarter.
 
 Customer Data
 1. Retrieve the total number of customers from each region.
+
+   ![Screenshot 2024-11-05 045453](https://github.com/user-attachments/assets/0085c701-50d2-40ed-9d8e-ec5c3d51cd3f)
+
 2. Find the most popular subscription type by the number of customers.
-3. Find customers who canceled their subscription within 6 months.
-4. Calculate the average subscription duration for all customers.
-5. Find customers with subscriptions longer than 12 months.
-6. Calculate total revenue by subscription type.
-7. Find the top 3 regions by subscription cancellations.
-8. Find the total number of active and canceled subscriptions.
+
+   ![Screenshot 2024-11-05 045746](https://github.com/user-attachments/assets/6c7750a8-a1a4-4301-b8ef-65e8ba7b6efc)
+4. Find customers who canceled their subscription within 6 months.
+``` SQL
+SELECT CustomerName,Canceled,SubscriptionStart,SubscriptionEnd
+FROM [dbo].[LITA CAPSTONE CUSTOMER DATA]
+WHERE Canceled = 'TRUE' AND MONTH(SubscriptionStart) BETWEEN 1 AND 6
+```
+
+5. Calculate the average subscription duration for all customers.
+   
+   ![Screenshot 2024-11-05 050209](https://github.com/user-attachments/assets/f7f1cd7e-dcca-4a0c-a08a-8850175368fc)
+7. Find customers with subscriptions longer than 12 months.
+
+8. Calculate total revenue by subscription type.
+
+   ![Screenshot 2024-11-05 050438](https://github.com/user-attachments/assets/42977778-6a35-441c-a5c5-5bd50eafaf12)
+9. Find the top 3 regions by subscription cancellations.
+
+   ![Screenshot 2024-11-05 051250](https://github.com/user-attachments/assets/44dd96aa-5440-4b9a-bf08-494f9fd0dcf9)
+11. Find the total number of active and canceled subscriptions.
+
+![Screenshot 2024-11-05 050742](https://github.com/user-attachments/assets/21a49193-9419-4639-8085-6b048ea273b8)
 
 
 ## Data Analysis

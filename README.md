@@ -8,6 +8,7 @@
 3. *[Data Cleaning and Preparation](#data-cleaning-and-preparation)*
 4. *[Exploratory Data Analysis](#exploratory-data-analysis)*
 5. *[Data Analysis](#data-analysis)*
+6. *[Conclusion](conclusion)*
 
 
 ## Project Overview
@@ -244,15 +245,19 @@ GROUP BY SubscriptionType;
 
 ```
 
-``` Power BI
-Average Sales Year= AVERAGE(SalesData[OrderDate].[Year])
-```
+ Power BI
+   
+![Screenshot 2024-11-05 052812](https://github.com/user-attachments/assets/e43b593a-d5ae-40c6-9748-c1d04b9e89d4)
+
+![Screenshot 2024-11-05 052845](https://github.com/user-attachments/assets/870ebf43-19da-4754-9de4-1d66acb4312f)
+
+![Screenshot 2024-11-05 052908](https://github.com/user-attachments/assets/fe63e286-2f62-48a7-b80a-796d2c6e945b)
+
+![Screenshot 2024-11-05 053103](https://github.com/user-attachments/assets/b4c2de64-c4c2-4bed-bd6a-1c159bfa8189)
 
 
+## Conclusion
 
-
-
-
-
-
-
+As I concluded my exploratory data analysis journey, I  felt like a treasure hunter who had unearthed a chest overflowing with golden insights. The numbers, which were once a puzzle has now become a compelling story of our data.
+With top selling products by region clearly mapped, we can now navigate the terrain with confidence, targeting the right customers with the right offerings. The correlation between quantity and unit price revealed a hdden pattern, allowing us to adjust our pricing strategy for maximum impact.
+As we embark on this data driven journey, we are not just analyzing numbers, we are writing the next chapter in our sales success story. With every insight,we are unlocking new opportunities, forging stronger customer relationships, and shaping a brighter future.
